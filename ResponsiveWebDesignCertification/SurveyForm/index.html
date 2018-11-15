@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+
+    <style>
+
+        body{
+            background-color: #ccfcb3;
+        }
+
+        #main{
+            border-radius: 10px;
+            border: 2px solid #6f975a;
+            background-color: #fff;
+            min-width: 60%;
+            padding: 10px;
+        }
+
+        #title{
+            text-align: center;
+            width: 100%;
+        }
+
+        #description{
+            font-size: 0.8em;
+            text-align: center;
+            width: 100%;
+        }
+
+        #survey-form{
+            margin: auto;
+            padding: 10px;
+            width: 80%;
+        }
+
+        .surveyFormRow{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .surveyFormRow .labelColumn{
+            align-items: center;
+            display: flex;
+            font-size: 0.9em;
+            grid-column: 1;
+            justify-content: flex-end;
+            padding-right: 10px;
+            text-align: right;
+        }
+
+        .surveyFormRow .componentColumn{
+            grid-column: 2;
+            padding-right: 10px;
+        }
+
+        .surveyFormRow .componentColumn > * {
+            width: 100%;
+        }
+
+        .surveyFormRow .componentColumn label {
+            align-items: center;
+            display: flex;
+            font-size: 0.9em;
+            padding: 2px 0 2px 0;
+        }
+
+        #buttonContainer{
+            display: flex;
+            grid-row: span 2;
+            justify-content: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container" id="main" style="max-width: 500px; margin: auto">
+        <h1 id="title">Survey Form Page</h1>
+        <p id="description">Hi, my name is Frederico. This is my Survey Form Page made from knowledges acquired with
+            FreeCodeCamp.</p>
+
+        <form id="survey-form">
+
+            <div class="surveyFormRow">
+                <div class="labelColumn">
+                    <label for="name" id="name-label">Name</label>
+                </div>
+                <div class="componentColumn">
+                    <input type="text" name="name" id="name" required placeholder="Inform your name" />
+                </div>
+            </div>
+
+            <div class="surveyFormRow">
+                <div class="labelColumn">
+                    <label for="email" id="email-label">E-mail</label>
+                </div>
+                <div class="componentColumn">
+                    <input type="email" name="email" id="email" required placeholder="Inform your e-mail" />
+                </div>
+            </div>
+
+            <div class="surveyFormRow">
+                <div class="labelColumn">
+                    <label for="number" id="number-label">Age</label>
+                </div>
+                <div class="componentColumn">
+                    <input type="number" name="number" min="1" max="100" id="number" placeholder="Inform your age" />
+                </div>
+            </div>
+
+            <div class="surveyFormRow">
+                <div class="labelColumn">
+                    <label for="dropdown" id="dropdown-label">What is your current employment status?</label>
+                </div>
+                <div class="componentColumn">
+                    <select id="dropdown" name="dropdown">
+                        <option>--Please select--</option>
+                        <option>Employed full time</option>
+                        <option>Employed part time</option>
+                        <option>Unemployed - actively seeking work</option>
+                        <option>Unemployed - not actively seeking work</option>
+                        <option>Full time student under 18</option>
+                        <option>Full time student over 18</option>
+                        <option>Retired</option>
+                        <option>Stay At Home Parent</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="surveyFormRow">
+                <div class="labelColumn">
+                    <p>How satisfied were you with this page?</p>
+                </div>
+                <div class="componentColumn">
+                    <label>
+                        <input type="radio" name="satisfaction" value="1"> Extremely dissatisfied<br />
+                    </label>
+                    <label>
+                        <input type="radio" name="satisfaction" value="2"> Somewhat dissatisfied<br />
+                    </label>
+                    <label>
+                        <input type="radio" name="satisfaction" value="3"> Neither satisfied nor dissatisfied<br />
+                    </label>
+                    <label>
+                        <input type="radio" name="satisfaction" value="4"> Somewhat satisfied<br />
+                    </label>
+                    <label>
+                        <input type="radio" name="satisfaction" value="5"> Extremely satisfied
+                    </label>
+                </div>
+            </div>
+
+            <div class="surveyFormRow">
+                <div class="labelColumn">
+                    <p>Please, point the main characteristics of this page</p>
+                </div>
+                <div class="componentColumn">
+                    <label>
+                        <input type="checkbox" name="mainCharacteristic" value="clean"> It's clean<br />
+                    </label>
+                    <label>
+                        <input type="checkbox" name="mainCharacteristic" value="fast"> It's fast<br />
+                    </label>
+                    <label>
+                        <input type="checkbox" name="mainCharacteristic" value="easyUse"> It's easy to use<br />
+                    </label>
+                    <label>
+                        <input type="checkbox" name="mainCharacteristic" value="colorful"> It's colorful<br />
+                    </label>
+                </div>
+            </div>
+
+            <div class="surveyFormRow">
+                <div class="labelColumn">
+                    <p>Give me some additional notes about your impressions</p>
+                </div>
+                <div class="componentColumn">
+                    <textarea name="additional-impressions" maxlength="1000" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div id="buttonContainer">
+                <button type="submit" id="submit">Send</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
